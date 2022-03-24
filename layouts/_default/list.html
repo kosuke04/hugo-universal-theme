@@ -37,7 +37,7 @@
                                   </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                                    <h2><a href="{{ .Permalink }}index.html">{{ .Title }}</a></h2>
                                     <div class="clearfix">
                                         <p class="author-category">
                                           {{ if isset .Params "authors" }}
@@ -47,7 +47,7 @@
                                           {{ if gt (len .Params.categories) 0 }}
                                           in 
                                           {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}
-                                              <a href="{{ "categories/" | relURL }}{{ . | urlize | lower }}">{{ $category }}</a>{{ end }}
+                                              <a href="{{ "categories/" | relURL }}{{ . | urlize | lower }}/index.html">{{ $category }}</a>{{ end }}
                                           {{ end }}
                                           {{ end }}
 
@@ -60,12 +60,12 @@
                                         {{ end }}
 
                                         <p class="date-comments">
-                                            <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
+                                            <a href="{{ .Permalink }}index.html"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
                                         </p>
                                         {{ end }}
                                     </div>
                                     <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
+                                    <p class="read-more"><a href="{{ .Permalink }}index.html" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -74,13 +74,13 @@
 
                         <ul class="pager">
                             {{ if .Paginator.HasPrev }}
-                            <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
+                            <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}/index.html">&larr; {{ i18n "newer" }}</a></li>
                             {{ else }}
                             <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
                             {{ end }}
 
                             {{ if .Paginator.HasNext }}
-                            <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
+                            <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}/index.html">{{ i18n "older" }} &rarr;</a></li>
                             {{ else }}
                             <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
                             {{ end }}
