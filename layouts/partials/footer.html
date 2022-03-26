@@ -22,7 +22,7 @@
                 {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
                 <div class="item same-height-row clearfix">
                     <div class="image same-height-always">
-                        <a href="{{ .Permalink }}">
+                        <a href="{{ .Permalink }}index.html">
                           {{ if isset .Params "banner" }}
                             <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="{{ .Title }}">
                           {{ else }}
